@@ -1,13 +1,13 @@
 import React from "react";
 
 import TimeChecker from "./pages/TimeChecker";
-import TodoComponent from "./pages/TodoComponent";
+import TodoList from "./pages/TodoList";
 
 function App() {
   return (
     <div className="App">
       <TimeChecker />
-      <TodoComponent />
+      <TodoList />
     </div>
   );
 }
