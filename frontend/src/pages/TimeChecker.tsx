@@ -1,5 +1,6 @@
 // 시간 체크 페이지입니다.
 import React, { useEffect, useState } from 'react';
+import timeFormatter from '../utils/timeFormatter';
 
 const TimeChecker = () => {
   const [timeElapsed, setTimeElapsed] = useState(0);  // 지나간 시간
@@ -23,7 +24,7 @@ const TimeChecker = () => {
 
   return (
     <div className="timeChecker">
-      <h1>{timeElapsed}</h1>
+      <h1>{timeFormatter(timeElapsed)}</h1>
       <button onClick={() => setIsPaused(false)}>Start</button>
       <button onClick={() => setIsPaused(true)}>Pause</button>
       <button onClick={resetTime}>Reset</button>
