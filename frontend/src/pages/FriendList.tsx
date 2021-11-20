@@ -4,13 +4,11 @@ function FriendList() {
   const [username, setusername] = useState("");
 
   function CreateFriend() {
-    console.log(username);
     setusername("");
   }
 
   function FriendInput(e: any) {
     setusername(e.target.value);
-    console.log(username);
   }
   return (
     <div className="friendList">
