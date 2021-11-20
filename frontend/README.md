@@ -1,5 +1,6 @@
-# Getting Started with Create React App
+# Forif-Team-Project
 
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -46,3 +47,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 # Hello World!
+=======
+Forif-Team-Project (yeol poon ta)
+>>>>>>> 9f3c91c886c98911a4dfda7173c87b80f1f33be4
