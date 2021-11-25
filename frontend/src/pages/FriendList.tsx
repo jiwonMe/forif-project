@@ -3,6 +3,7 @@ import { useState } from "react";
 function FriendList() {
   const [username, setusername] = useState("");
   const [friendArr, setfriendArr] = useState<string[]>([]);
+  const [clickAddFriend, setclickAddFriend] = useState(false);
   const test_arr: string[] = ["수지", "아이린", "카리나"]; //testing arr, reprsent Firestore.
 
   function CheckFriend() {
@@ -13,6 +14,7 @@ function FriendList() {
 
     //Correct, Put in list.
     else if (test_arr.includes(username)) {
+      setclickAddFriend(false);
       setfriendArr([...friendArr, username]);
       setusername("");
     }
@@ -25,16 +27,23 @@ function FriendList() {
 
   return (
     <div className="friendList">
-      <input
-        id="username"
-        type="text"
-        placeholder="이름을 입력하세요"
-        onChange={(e) => {
-          setusername(e.target.value);
-        }}
-        value={username}
-      ></input>
-      <button onClick={() => CheckFriend()}>친구추가</button>
+      {clickAddFriend === true ? (
+        <div>
+          <input
+            id="username"
+            type="text"
+            placeholder="이름을 입력하세요"
+            onChange={(e) => {
+              setusername(e.target.value);
+            }}
+            value={username}
+          ></input>
+          <button onClick={() => CheckFriend()}>확인</button>
+          <button onClick={() => setclickAddFriend(false)}>뒤로</button>
+        </div>
+      ) : (
+        <button onClick={() => setclickAddFriend(true)}>친구 추가</button>
+      )}
       <ul className="friends">
         {friendArr.map((friend) => {
           return <li key={friend}>{friend}</li>;
