@@ -6,7 +6,7 @@ function FriendList() {
   const [clickAddFriend, setclickAddFriend] = useState(false);
   const test_arr: string[] = ["수지", "아이린", "카리나"]; //testing arr, reprsent Firestore.
 
-  function CheckFriend() {
+  const CheckFriend = () => {
     //If it is already friend, reject.
     if (friendArr.includes(username)) {
       alert("이미 친구 목록에 존재합니다.");
@@ -23,7 +23,7 @@ function FriendList() {
     else {
       alert("이름이 존재하지 않습니다, 한번 더 확인해주세요");
     }
-  }
+  };
 
   return (
     <div className="friendList">
