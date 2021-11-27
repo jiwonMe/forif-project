@@ -1,24 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "../css/Main.css";
 function Main() {
   return (
-    <div className="Main">
-      <ul>
-        <li>
-          <Link to="/">홈</Link>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Link to="/FriendList">친구추가</Link>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Link to="/TimeChecker">시간측정</Link>
-        </li>
-      </ul>
+    <div className="main">
+      <div className="titles">
+        <h1 className="mainTitle">십품타</h1>
+        <h3 className="subTitle">열품타 클론 프로젝트</h3>
+      </div>
+      <div className="links">
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/FriendList">
+          <button>친구추가</button>
+        </Link>
+        <Link to="/TimeChecker">
+          <button>시간측정</button>
+        </Link>
+      </div>
     </div>
   );
 }

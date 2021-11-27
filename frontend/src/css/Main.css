@@ -1,0 +1,25 @@
+li {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #53b5ec;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.links {
+  margin-top: 400px;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainTitle {
+  font-size: 100px;
+  height: 50px;
+}
