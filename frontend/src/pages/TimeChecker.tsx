@@ -1,11 +1,12 @@
 // 시간 체크 페이지입니다.
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import timeFormatter from '../utils/timeFormatter';
 
 // 시간 status를 '시작함', '일시정지함', '멈춤' 세 가지로 분류.
 type timeStatusType = 'started' | 'paused' | 'stopped';
 
-const TimeChecker = () => {
+// to-do list를 안에 넣기 위해 children을 받아옴.
+const TimeChecker: FC = ({ children }) => {
   const [timeElapsed, setTimeElapsed] = useState(0);  // 지나간 시간
   const [timeStatus, setTimeStatus] = useState<timeStatusType>('stopped');
 
@@ -27,7 +28,17 @@ const TimeChecker = () => {
 
   return (
     <div className="timeChecker">
-      <h1>{timeFormatter(timeElapsed)}</h1>
+      <div className="timeText">
+        <p><b>현재 공부한 시간</b></p>
+        <h1>{timeFormatter(timeElapsed)}</h1>
+      </div>
+
+      {/* Todo list 들어갈 곳 */}
+      <div className="timeTodo">
+        {children}
+      </div>
+      
+      <div className="timeButtonContainer">
       {
         // stopped면 '공부시작' 버튼만 표시
         (timeStatus === 'stopped') ? 
@@ -37,15 +48,16 @@ const TimeChecker = () => {
         (timeStatus === 'started') ? 
         <>
           <button onClick={() => setTimeStatus('paused')}>일시정지</button>
-          <button onClick={stopTime}>정지</button>
+          <button className="button-white" onClick={stopTime}>정지</button>
         </> : 
 
         // paused면 '계속하기'와 '정지' 버튼 표시
         <>
           <button onClick={() => setTimeStatus('started')}>계속하기</button>
-          <button onClick={stopTime}>정지</button>
+          <button className="button-white" onClick={stopTime}>정지</button>
         </>
       }
+      </div>
     </div>
   );
 };
