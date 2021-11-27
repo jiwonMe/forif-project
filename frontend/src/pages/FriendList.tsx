@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../css/FriendList.css";
 function FriendList() {
   const [username, setusername] = useState("");
   const [friendArr, setfriendArr] = useState<string[]>([]);
@@ -36,6 +37,7 @@ function FriendList() {
       {clickAddFriend === true ? (
         <div>
           <input
+            className="friendInput"
             id="username"
             type="text"
             placeholder="이름을 입력하세요"

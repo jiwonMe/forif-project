@@ -3,7 +3,7 @@ import TimeChecker from "./pages/TimeChecker";
 import TodoList from "./pages/TodoList";
 import FriendList from "./pages/FriendList";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./css/App.css";
 import Main from "./pages/Main";
 
 function App() {
