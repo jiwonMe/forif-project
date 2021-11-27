@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 function FriendList() {
   const [username, setusername] = useState("");
   const [friendArr, setfriendArr] = useState<string[]>([]);
@@ -27,6 +28,11 @@ function FriendList() {
 
   return (
     <div className="friendList">
+      <ul className="friends">
+        {friendArr.map((friend) => {
+          return <li key={friend}>{friend}</li>;
+        })}
+      </ul>
       {clickAddFriend === true ? (
         <div>
           <input
@@ -44,11 +50,9 @@ function FriendList() {
       ) : (
         <button onClick={() => setclickAddFriend(true)}>친구 추가</button>
       )}
-      <ul className="friends">
-        {friendArr.map((friend) => {
-          return <li key={friend}>{friend}</li>;
-        })}
-      </ul>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
     </div>
   );
 }
